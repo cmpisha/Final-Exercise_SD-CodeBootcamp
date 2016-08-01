@@ -1,6 +1,6 @@
-[![FINAL EXERCISE - A cumulative review of the SD Code Bootcamp Course]
-
 # Final Exercise
+ 
+### A cumulative review of the SD Code Bootcamp Course
 
 The goal of this exercise is to combine all of the primary concepts we covered during the course. Your goal is to produce a final website that you will review with the class, this will include demonstrations of your work-flow. Your final site must include the following:
 - Checkout a new copy of the mini framework, use this as a basis for the application.
