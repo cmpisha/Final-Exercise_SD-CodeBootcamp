@@ -1,80 +1,190 @@
-body {
-    font-family: Arial;
+html{
+  /*This sets the REM Unit for the Document*/
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 1.5;
+}
+
+
+body{
+	/* @TODO actually get this working with typekit*/
+	font-family: 'Museo Slab', sans-serif;
+	font-weight: 100;
+	letter-spacing: 0.085em;
+	background-color: #dfd9d5;
+}
+
+.site-branding{
+  /*@TODO: Determine if this needs cleaned*/
+}
+
+.main-header {
+	color: #FFF;
+	padding: 45px 25px 0px 25px;
+
+}
+
+.main-header-background {
+  /*background-image: url(img/home-page-background_1.jpg);
+  background-size: cover;*/
+  /*height: 25rem;*/
+}
+
+.overlay {
+	background-color: rgba(18, 14, 11, .83);
+  margin-top: -42%;
+	padding-top: 4rem;
+	color: #FFF;
+	line-height: 1.9em;
+}
+
+/** Nav **/
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover{
+	background-color: #3a3734;
+}
+
+a{
+	color: #fff;
+}
+
+a:hover{
+	color: #3a3734;
+}
+
+/** carousel **/
+
+.carousel{
+  z-index: -10;
+  top: -175px;
+}
+
+
+/** Typography **/
+
+.main-logo{
+	font-family: 'Fresh Script', cursive;
+	font-size: 3em;
+}
+
+.blog-headline{
+		font-family: 'Josefin Slab', serif;
+		text-transform: uppercase;
+		font-size: 2rem;
+		letter-spacing: 0.1em;
+		line-height: 1.375em;
+		text-align: center;
+
+		border-bottom: solid 2px #fff;
+		padding-bottom: 1.75rem;
+}
+
+/*Links */
+
+.btn:hover{
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Intro Paragraph*/
+
+.intro{
+	text-align: center;
+}
+
+
+/** Thumbnails **/
+
+.caption h3{
+  margin-top: 0px;
+}
+
+.thumbnail-row {
+	/* @TODO: This is just cheating the look I want right now and it's
+	** doing gross things at small sizes. Fix it, maybe nested columns*/
+  padding: 2% 10%;
+}
+
+.thumbnail{
+  padding: 14px;
+  background: none;
+  border: none;
+}
+
+.thumbnail .caption{
+  color: #fff;
+}
+
+.thumbnail hr{
+	color: #fff;
+	height: 5px;
+	width:60%;
+}
+
+.thumbnail p{
+	font-size: 0.5rem;
+}
+
+.btn-hollow {
+	color: #fff;
+	font-style: italic;
+  border: 1px solid #fff;
+}
+
+/** Project Content **/
+.blog-content{
+	padding: 0 6%;
+}
+
+.blog-content h1{
+	text-transform: uppercase;
+	font-size: 2rem;
+	letter-spacing: 0.1em;
+	line-height: 1.375em;
+	font-weight: 100;
+	padding-bottom: 2rem;
+}
+
+.lead{
+	line-height: 2rem;
+	padding-bottom: 2rem;
+}
+
+p.body-copy{
+	line-height: 1.375rem;
+	padding-bottom: 2rem;
+}
+
+.blog-content img{
+	padding-bottom: 2rem;
+}
+
+.sidebar ul{
+	margin-left: -1rem;
+}
+
+/** Blog Footer **/
+
+.blog-footer {
+    padding: 40px 0;
+    color: #999;
+    text-align: center;
+    background-color: #191411;
+    border-top: 5px solid #e5e5e5;
+	}
+/*Responsive Typography*/
+/*By changing the REM Unit base on your breakpoint,
+you can resize all the typography elements by the
+same scale*/
+
+@media (max-width: 900px){
+  html{
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 500px){
+  html{
     font-size: 14px;
-}
-.logo {
-    font-size: 100px;
-    font-weight: bolder;
-    letter-spacing: -6px;
-    color: #222;
-    margin: 20px 30px;
-}
-.logo .number {
-    color: #222;
-    opacity: 0.1;
-}
-.navigation {
-    margin-left: 33px;
-}
-.navigation a {
-    display: inline-block;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: 2px solid #222;
-    background: #222;
-    color: #fff;
-}
-.navigation a:hover {
-    color: #222;
-    background: transparent;
-}
-.container {
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin: 33px;
-}
-.container a {
-    color: #222;
-}
-.container table {
-    font-size: 11px;
-    margin-top: 20px;
-}
-.container table thead td {
-    background-color: #f5f5f5;
-    padding: 4px 10px;
-}
-.container table tbody td {
-    padding: 4px 10px;
-}
-.container .box {
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
-    margin-top: 30px;
-}
-.container input {
-    background-color: #f5f5f5;
-    border: 0;
-    padding: 5px 10px;
-}
-.container input[type="submit"] {
-    background-color: #ccc;
-    cursor: pointer;
-}
-.container input[type="submit"]:hover {
-    background-color: #222;
-    color: #fff;
-}
-.container button {
-    background-color: #ccc;
-    border: 0;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-.container button:hover {
-    background-color: #222;
-    color: #fff;
+  }
 }

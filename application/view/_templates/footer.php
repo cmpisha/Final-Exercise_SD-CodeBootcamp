@@ -1,13 +1,15 @@
-    <!-- jQuery, loaded in the recommended protocol-less way -->
-    <!-- more http://www.paulirish.com/2010/the-protocol-relative-url/ -->
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <footer class="blog-footer">
+      <p>Copyright and general site info</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
 
-    <!-- define the project's URL (to make AJAX calls possible, even when using this in sub-folders etc) -->
-    <script>
-        var url = "<?php echo URL; ?>";
-    </script>
 
-    <!-- our JavaScript -->
-    <script src="<?php echo URL; ?>js/application.js"></script>
-</body>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="<?php echo URL; ?>js/bootstrap.min.js"></script>
+  </body>
 </html>
