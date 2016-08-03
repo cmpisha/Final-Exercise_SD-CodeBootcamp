@@ -35,7 +35,7 @@
               <li class="active"><a href="<?php echo URL; ?>">Home</a></li>
               <li><a href="#">Projects</a></li>
               <li><a href="<?php echo URL; ?>home/about">About</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="<?php echo URL; ?>home/contact"">Contact</a></li>
             </ul>
           </div>
          </div>

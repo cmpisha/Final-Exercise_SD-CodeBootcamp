@@ -23,7 +23,7 @@ class Home extends Controller
     }
 
     /**
-     * PAGE: exampleone
+     * PAGE: about
      * This method handles what happens when you move to http://yourproject/home/exampleone
      * The camelCase writing is just for better readability. The method name is case-insensitive.
      */
@@ -34,4 +34,17 @@ class Home extends Controller
          require APP . 'view/home/about.php';
          require APP . 'view/_templates/footer.php';
      }
+
+     /**
+      * PAGE: contact
+      * This method handles what happens when you move to http://yourproject/home/exampleone
+      * The camelCase writing is just for better readability. The method name is case-insensitive.
+      */
+      public function contact()
+      {
+          // load views
+          require APP . 'view/_templates/header.php';
+          require APP . 'view/home/contact.php';
+          require APP . 'view/_templates/footer.php';
+      }
 }
