@@ -172,6 +172,13 @@ p.body-copy{
     background-color: #191411;
     border-top: 5px solid #e5e5e5;
 	}
+
+/****** About Page *****/
+
+.about-text{
+  padding-bottom: 3rem;
+}
+
 /*Responsive Typography*/
 /*By changing the REM Unit base on your breakpoint,
 you can resize all the typography elements by the
