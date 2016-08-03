@@ -32,7 +32,7 @@
           </div>
           <div class="col-sm-7">
             <ul class="nav navbar-nav navbar-right nav-pills ">
-              <li class="active"><a href="#">Home</a></li>
+              <li class="active"><a href="<?php echo URL; ?>">Home</a></li>
               <li><a href="#">Projects</a></li>
               <li><a href="<?php echo URL; ?>home/about">About</a></li>
               <li><a href="#">Contact</a></li>
