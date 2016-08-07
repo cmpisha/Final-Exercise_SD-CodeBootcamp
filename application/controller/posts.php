@@ -21,6 +21,15 @@ class Posts extends Controller
         $five_posts = $this->model->get5RecentPosts();
         $amount_of_posts = $this->model->getAmountOfPosts();
 
+        function limitText($text, $limit) {
+          if (str_word_count($text, 0) > $limit) {
+              $words = str_word_count($text, 2);
+              $pos = array_keys($words);
+              $text = substr($text, 0, $pos[$limit]) . '...';
+          }
+          return $text;
+        }
+
        // load views. within the views we can echo out $songs and $amount_of_songs easily
         require APP . 'view/_templates/header.php';
         require APP . 'view/posts/index.php';
@@ -44,10 +53,10 @@ class Posts extends Controller
           $this->model->insertNewPost($_POST["post_name"], $_POST["post_author_id"],  $_POST["post_body"], $_POST["post_category_id"], $_POST["post_img_path"]);
       }
 
-      var_dump($_POST);
+
 
       // where to go after song has been added
-      //header('location: ' . URL . 'posts/index');
+      header('location: ' . URL . 'posts/index');
 
     }
 

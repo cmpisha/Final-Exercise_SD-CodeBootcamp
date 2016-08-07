@@ -30,7 +30,11 @@
                 <div class="caption col-xs-8">
                   <h3><?php if (isset($post->name)) echo htmlspecialchars($post->name, ENT_QUOTES, 'UTF-8'); ?></h3>
                   <h6><?php if (isset($post->date_published)) echo htmlspecialchars($post->date_published, ENT_QUOTES, 'UTF-8'); ?></h6>
-                  <p><?php if (isset($post->body)) echo htmlspecialchars($post->body, ENT_QUOTES, 'UTF-8'); ?></p>
+                  <p><?php if (isset($post->body)){
+                      //echo htmlspecialchars($post->body, ENT_QUOTES, 'UTF-8');
+                      $body = htmlspecialchars($post->body, ENT_QUOTES, 'UTF-8');
+                      echo limitText($body, 150);
+                  } ?></p>
                   <p><a href="#" class="btn btn-hollow" role="button">Read More</a></p>
                 </div>
               </div>

@@ -40,12 +40,14 @@ class Model
       "posts.body, category.name AS category_name, posts.img_path FROM posts " .
           "INNER JOIN author ON posts.author_id = author.id " .
           "INNER JOIN category ON posts.category_id = category.id " .
-          "ORDER BY posts.id";
+          "ORDER BY posts.date_published DESC LIMIT 5";
       $query = $this->db->prepare($sql);
       $query->execute();
 
       return $query->fetchAll();
     }
+
+
 
 
 /*@TODO: A query and view to add a post*/
@@ -60,22 +62,7 @@ public function insertNewPost($post_name, $post_author_id, $post_body, $post_cat
     $query->execute($parameters);
 }
 
-/**
- * Add a Vehicle to database
- */
-public function addVehicle($manu_id, $model_id, $year, $mileage, $exterior_color_id)
-{
 
-    $sql = "INSERT INTO Vehicle (manu_id, model_id, year, mileage, exterior_color_id) VALUES (:manu_id, :model_id, :year, :mileage, :exterior_color_id)";
-    $query = $this->db->prepare($sql);
-    $parameters = array(':manu_id' => $manu_id, ':model_id' => $model_id, ':year' => $year, ':mileage' => $mileage, ':exterior_color_id' => $exterior_color_id);
-
-    // useful for debugging: you can see the SQL behind above construction by using:
-    // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
-
-    $query->execute($parameters);
-
-}
 
     // /**
     //  * Get a song from database
