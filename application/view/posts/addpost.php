@@ -1,3 +1,13 @@
+<script>
+  //Sets the Active tab in the nav bar
+
+  document.addEventListener("DOMContentLoaded",function() {
+
+    var add_new_nav= document.querySelector("#add-new-nav");
+    add_new_nav.className = "active";
+
+  });
+</script>
 
     <div class="container overlay">
       <div class="row"><!--This is a place for the introductory content -->

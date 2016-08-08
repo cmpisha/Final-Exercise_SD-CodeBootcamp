@@ -1,3 +1,14 @@
+<script>
+  //Sets the Active tab in the nav bar
+
+  document.addEventListener("DOMContentLoaded",function() {
+
+    var about_nav= document.querySelector("#about-nav");
+    about_nav.className = "active";
+
+  });
+</script>
+
 <div class="container overlay">
       <div class="row"><!--This is a place for the introductory content -->
         <h1 class="col-xs-6 col-xs-offset-3 blog-headline">About</h1>

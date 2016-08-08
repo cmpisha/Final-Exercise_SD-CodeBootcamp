@@ -1,3 +1,13 @@
+<script>
+  //Sets the Active tab in the nav bar
+
+  document.addEventListener("DOMContentLoaded",function() {
+
+    var contact_nav= document.querySelector("#contact-nav");
+    contact_nav.className = "active";
+
+  });
+</script>
 <div class="container overlay">
       <div class="row"><!--This is a place for the introductory content -->
         <h1 class="col-xs-6 col-xs-offset-3 blog-headline">Contact</h1>

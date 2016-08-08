@@ -1,3 +1,14 @@
+<script>
+  //Sets the Active tab in the nav bar
+
+  document.addEventListener("DOMContentLoaded",function() {
+
+    var post_nav= document.querySelector("#post-nav");
+    post_nav.className = "active";
+
+  });
+</script>
+
 <div class="container overlay">
     <div class="row"><!--This is a place for the introductory content -->
       <h1 class="col-xs-8 col-xs-offset-2 blog-headline">Latest Posts</h1>
@@ -7,10 +18,7 @@
 
               <!-- <p >Documenting my journey in learning code. </p> -->
               <p>Take a look at some of the projects I've been working on.</p>
-              <h3>Amount of songs (data from second model)</h3>
-              <div>
-                  <?php echo $amount_of_posts; ?>
-              </div>
+              
         </div>
     </div>
 
@@ -35,7 +43,9 @@
                       $body = htmlspecialchars($post->body, ENT_QUOTES, 'UTF-8');
                       echo limitText($body, 150);
                   } ?></p>
-                  <p><a href="#" class="btn btn-hollow" role="button">Read More</a></p>
+                  <p>
+                    <a href="<?php echo URL . 'posts/singlepost/' . htmlspecialchars($post->id, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-hollow" role="button">Read More</a>
+                  </p>
                 </div>
               </div>
           </div>
