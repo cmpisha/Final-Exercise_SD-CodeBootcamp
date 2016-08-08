@@ -1,8 +1,7 @@
 <?php
 
 /**
- * Class Songs
- * This is a demo class.
+ * Class Posts
  *
  * Please note:
  * Don't use the same name for class and method, as this might trigger an (unintended) __construct of the class.
@@ -52,12 +51,43 @@ class Posts extends Controller
           // do updateSong() from model/model.php
           $this->model->insertNewPost($_POST["post_name"], $_POST["post_author_id"],  $_POST["post_body"], $_POST["post_category_id"], $_POST["post_img_path"]);
       }
-
-
-
       // where to go after song has been added
       header('location: ' . URL . 'posts/index');
 
+    }
+
+    //JSON object PAGE
+
+    public function postJSON($post_id)
+    {
+      if (isset($post_id)) {
+        $post = $this->model->getPost($post_id);
+
+        //var_dump($post);
+
+        $result = '{"results": [{'.
+          '"category":" '.$post->category_name.'",' .
+          '"name":" '.$post->name.'",' .
+          '"body":" '.$post->body.'",' .
+          '"date":" '.$post->date_published.'",' .
+          '"author":" '.$post->author_name.'",' .
+          '"image":"'.$post->img_path.'"' .
+          "}]}";
+        echo $result;
+      }
+    }
+
+
+    public function singlePost($post_id)
+    {
+      if (isset($post_id)) {
+        $post = $this->model->getPost($post_id);
+        $five_posts = $this->model->get5RecentPosts();
+      // load views.
+       require APP . 'view/_templates/header.php';
+       require APP . 'view/posts/singlePost.php';
+       require APP . 'view/_templates/footer.php';
+     }
     }
 
 
