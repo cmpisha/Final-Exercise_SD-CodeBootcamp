@@ -56,6 +56,7 @@
 
   document.addEventListener("DOMContentLoaded",function() {
 
+    //@JOSH: What happens if the POST ID is not set? 
     make_ajax("/posts/postJSON/ <?php if (isset($post->id)) echo htmlspecialchars($post->id, ENT_QUOTES, 'UTF-8'); ?>",update_view);
 
   });

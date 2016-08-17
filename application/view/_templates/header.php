@@ -32,16 +32,22 @@
           </div>
           <div class="col-sm-7">
             <ul class="nav navbar-nav navbar-right nav-pills ">
+              <!--
+               @JOSH: Thought you might find this interesting:
+                https://moz.com/blog/relative-vs-absolute-urls-whiteboard-friday -->
+
               <li id="home-nav"><a href="<?php echo URL; ?>">Home</a></li>
               <li id="post-nav"><a href="<?php echo URL; ?>posts/index">Posts</a></li>
               <li id="add-new-nav"><a href="<?php echo URL; ?>posts/addpost">Add New Post</a></li>
               <li id="about-nav"><a href="<?php echo URL; ?>home/about">About</a></li>
-              <li id="contact-nav"><a href="<?php echo URL; ?>home/contact"">Contact</a></li>
+              <!-- @JOSH: you had an extra double-quote -->
+              <li id="contact-nav"><a href="<?php echo URL; ?>home/contact">Contact</a></li>
             </ul>
           </div>
          </div>
     </div>
 
+    <!-- @JOSH: Consider adding this behind the div that closes the heading container, I assume it was the one before it -->
     <!-- End Heading Container -->
 
     <!-- Start Carousel -->

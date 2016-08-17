@@ -3,13 +3,15 @@
 
   document.addEventListener("DOMContentLoaded",function() {
 
-    var post_nav= document.querySelector("#post-nav");
-    post_nav.className = "active";
+    //@JOSH: I would remove the variable:
+    document.querySelector("#post-nav").className = "active"; 
+    //@JOSH: I also see this in several views, I would move it to an external JS file
 
   });
 </script>
 
 <div class="container overlay">
+
     <div class="row"><!--This is a place for the introductory content -->
       <h1 class="col-xs-8 col-xs-offset-2 blog-headline">Latest Posts</h1>
     </div>
@@ -23,9 +25,8 @@
     </div>
 
     <div>
-
+	<!-- @JOSH: Since this is not user supplied data I generally don't worry about encoding - although I would rather encode than not :) -->
         <h3><?php if (isset($post->id)) echo htmlspecialchars($post->id, ENT_QUOTES, 'UTF-8'); ?></h3>
-
 
     </div>
 

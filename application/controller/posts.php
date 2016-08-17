@@ -16,10 +16,23 @@ class Posts extends Controller
      */
     public function index()
     {
-        // getting all songs and amount of songs
-        $five_posts = $this->model->get5RecentPosts();
-        $amount_of_posts = $this->model->getAmountOfPosts();
+        //@JOSH: make sure to remove irrelevant comments :)
 
+	//@JOSH: I wouldn't make a function that returns just 5 results, instead, make the number to return an argument.
+        //$five_posts = $this->model->get5RecentPosts();
+	$five_posts = $this->model->getRecentPosts(5);
+
+	//@JOSH: if this is unnecessary than I would remove it
+        //$amount_of_posts = $this->model->getAmountOfPosts();
+	/*@JOSH: I Know this is how the original author did it, but I would consider just doing something like:
+
+	$amount_posts = count($five_posts);
+
+
+	This might save a DB call
+	*/
+	
+	//@JOSH: I generally avoid defining a function within another in PHP
         function limitText($text, $limit) {
           if (str_word_count($text, 0) > $limit) {
               $words = str_word_count($text, 2);
@@ -88,6 +101,7 @@ class Posts extends Controller
        require APP . 'view/posts/singlePost.php';
        require APP . 'view/_templates/footer.php';
      }
+     //@JOSH: What happens if the post_id is not set? What if it's not numeric?
     }
 
 

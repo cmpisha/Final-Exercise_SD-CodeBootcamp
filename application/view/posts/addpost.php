@@ -31,14 +31,17 @@
         </div>
 
         <label for="post_category_id">Category</label>
+	<!-- @JOSH: I assume these are in the DB, consider generating them dynamically. That way, if you need to change (add/edit/delete) you 
+just have to modify the data and not your code -->
         <select class="form-control" name="post_category_id">
-          <option value ="1">Community</option>
-          <option value ="2">Work</option>
-          <option value ="3">Events</option>
-          <option value ="4">Design</option>
-          <option value ="5">Web Development</option>
-          <option value ="6">Tutorials</option>
-          <option value ="7">Resources</option>
+          <option value="1">Community</option>
+          <option value="2">Work</option>
+          <option value="3">Events</option>
+          <option value="4">Design</option>
+          <option value="5">Web Development</option>
+          <option value="6">Tutorials</option>
+          <option value="7">Resources</option>
+	<!-- @JOSH: why the spaces in the value attribute? -->
         </select>
 
         <div class="form-group">
@@ -49,5 +52,6 @@
         <!-- <input type="submit" name="submit_new_post" value="Update" > -->
 
         <button type="submit" class="btn btn-default" name="submit_new_post" value="Update">Add Post!</button>
+	<!-- @JOSH: When or why would you use button over input type? -->
       </form>
   </div><!-- End of Container -->

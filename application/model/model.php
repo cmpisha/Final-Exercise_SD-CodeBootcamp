@@ -47,6 +47,19 @@ class Model
       return $query->fetchAll();
     }
 
+    public function getRecentPosts($amount_posts){
+      $sql = "SELECT posts.id, posts.name, author.name AS author_name, posts.date_published, " .
+      "posts.body, category.name AS category_name, posts.img_path FROM posts " .
+          "INNER JOIN author ON posts.author_id = author.id " .
+          "INNER JOIN category ON posts.category_id = category.id " .
+          "ORDER BY posts.date_published DESC LIMIT :amount_posts";
+
+      $query = $this->db->prepare($sql);
+      $query->bindParam(':amount_posts',$amount_posts, PDO::PARAM_INT);
+      $query->execute();
+
+      return $query->fetchAll();
+    }
 
 
 
@@ -65,11 +78,16 @@ public function insertNewPost($post_name, $post_author_id, $post_body, $post_cat
 
 public function getPost($post_id)
 {
+    /*@JOSH: In general (and I know this wasn't in the original framework) it's a good idea to explore the use of 
+	try-catch blocks, especially with SQL. If an error occurs you want your application to handle it gracefully, that is, not
+	crash and leave the user at a white screen
+    */
     $sql = "SELECT posts.id, posts.name, author.name AS author_name, posts.date_published, " .
     "posts.body, category.name AS category_name, posts.img_path FROM posts " .
         "INNER JOIN author ON posts.author_id = author.id " .
         "INNER JOIN category ON posts.category_id = category.id ".
         "WHERE posts.id = :post_id LIMIT 1";
+    //@JOSH: In your SQL, you shouldn't need the LIMIT when the query should only return a single result - and that should be guaranteed by the fact that you're selecting off of a PK 
     $query = $this->db->prepare($sql);
     $post_id_in = (int)$post_id;
     $parameters = array(':post_id' => $post_id_in);
